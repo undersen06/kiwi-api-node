@@ -8,13 +8,13 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-exports.sendEmail =  function(){
+exports.sendEmail =  function(to,subject,message){
 
   const mailOptions = {
     from: 'sender@email.com', // sender address
-    to: 'tomas.diaz@xintec.cl', // list of receivers
-    subject: 'Subject of your email', // Subject line
-    html: '<p>Your html here</p>'// plain text body
+    to: to, // list of receivers
+    subject: subject, // Subject line
+    html: message// plain text body
   };
 
 
