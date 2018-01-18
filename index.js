@@ -8,6 +8,8 @@ var CommuneController = require('./controllers/commune');
 var TipsController = require('./controllers/tips');
 var AuthController = require('./controllers/admin');
 
+var SettinsController = require('./controllers/admin');
+
 var Admin =  require('./models/admin');
 var jsonwebtoken = require("jsonwebtoken");
 
@@ -86,6 +88,9 @@ router.route('/auth/admin/create')
 .post(AuthController.register);
 
 router.route('/auth/admin/sign_in')
+.post(AuthController.sign_in);
+
+router.route('/settings/enable/:id')
 .post(AuthController.sign_in);
 
 
